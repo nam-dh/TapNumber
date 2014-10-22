@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "TopViewController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) TopViewController *topViewController;
 
 @end
 
@@ -17,6 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]
+                   initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.topViewController = [[TopViewController alloc] init];
+    self.window.rootViewController = self.topViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

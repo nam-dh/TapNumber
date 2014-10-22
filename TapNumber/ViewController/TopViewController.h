@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TopViewController.h
 //  TapNumber
 //
 //  Created by Nam on 2014/10/22.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopView.h"
 
-@interface ViewController : UIViewController
-
+@interface TopViewController : UIViewController <TopViewDelegate>
 
 @end
 
