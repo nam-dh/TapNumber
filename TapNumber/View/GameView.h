@@ -17,6 +17,8 @@
 @interface GameView : UIView
 
 -(id) initWithFrame:(CGRect)frame delegate:(id) delegate totalNumber:(int) totalNumber;
--(void) dismissButtonWithID:(int)i;
+-(void) dismissButtonWithID:(int)i isWinning:(BOOL)isWinning;
+-(void)updateTimer:(double) timer;
+
 
 @end

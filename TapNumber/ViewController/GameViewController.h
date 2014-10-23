@@ -11,4 +11,6 @@
 
 @interface GameViewController : UIViewController <GameViewDelegate>
 
+- (void) startGame;
+
 @end

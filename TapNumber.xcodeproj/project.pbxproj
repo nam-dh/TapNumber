@@ -16,6 +16,7 @@
 		3DAF248419F79F2100150A35 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF248319F79F2100150A35 /* GameViewController.m */; };
 		3DAF248719F79FB500150A35 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF248619F79FB500150A35 /* GameView.m */; };
 		3DAF248F19F7AE4400150A35 /* ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAF248E19F7AE4400150A35 /* ruby.png */; };
+		3DD72D3819F8FE9E002B7BDE /* TimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72D3719F8FE9E002B7BDE /* TimerModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		3DAF248519F79FB500150A35 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameView.h; path = TapNumber/View/GameView.h; sourceTree = "<group>"; };
 		3DAF248619F79FB500150A35 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameView.m; path = TapNumber/View/GameView.m; sourceTree = "<group>"; };
 		3DAF248E19F7AE4400150A35 /* ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ruby.png; path = Images/ruby.png; sourceTree = "<group>"; };
+		3DD72D3619F8FE9E002B7BDE /* TimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimerModel.h; path = Model/TimerModel.h; sourceTree = "<group>"; };
+		3DD72D3719F8FE9E002B7BDE /* TimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimerModel.m; path = Model/TimerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 		3DAF248B19F7A4FB00150A35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DD72D3619F8FE9E002B7BDE /* TimerModel.h */,
+				3DD72D3719F8FE9E002B7BDE /* TimerModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				3DAF245A19F793A700150A35 /* AppDelegate.m in Sources */,
 				3DAF247D19F7945C00150A35 /* TopView.m in Sources */,
 				3DAF245719F793A700150A35 /* main.m in Sources */,
+				3DD72D3819F8FE9E002B7BDE /* TimerModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +448,7 @@
 				3DAF247619F793A700150A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3DAF247719F793A700150A35 /* Build configuration list for PBXNativeTarget "TapNumberTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +457,7 @@
 				3DAF247919F793A700150A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

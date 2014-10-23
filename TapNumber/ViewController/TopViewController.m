@@ -44,6 +44,7 @@
 - (void) newGameTap
 {
     [self presentViewController:self.gameViewController animated:YES completion:nil];
+    [self.gameViewController startGame];
 }
 
 @end

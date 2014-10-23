@@ -42,28 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TapNumber/View/GameView.m"
-            timestampString = "435664073.357891"
+            timestampString = "435750698.747883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-dismissButtonWithID:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TapNumber/ViewController/GameViewController.m"
-            timestampString = "435663438.686212"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-numberTap:"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-dismissButtonWithID:isWinning:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
