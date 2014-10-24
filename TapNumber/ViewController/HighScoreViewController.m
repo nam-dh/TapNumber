@@ -8,6 +8,7 @@
 
 #import "HighScoreViewController.h"
 #import "HighScoreView.h"
+#import "HighScoreTableCell.h"
 #import "HighScoreModel.h"
 #import "HighScoreList.h"
 #import "NotificationManager.h"
@@ -59,12 +60,13 @@ double tempScore;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    HighScoreTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // セルが作成されていないか?
     if (!cell) { // yes
         // セルを作成
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[HighScoreTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.userInteractionEnabled = NO;
     }
     
     // セルにテキストを設定
@@ -74,8 +76,7 @@ double tempScore;
         NSLog(@"Name = %@", [model getName]);
         NSLog(@"Score = %.2f", [model getHighScore]);
     
-        NSString *cellText = [NSString stringWithFormat:@"%@\t\t%.2f", [model getName], [model getHighScore]];
-        cell.textLabel.text = cellText;
+        [cell setName:[model getName] andScore:[model getHighScore]];
     }
     
     return cell;
@@ -94,11 +95,8 @@ double tempScore;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
     NSString *name = [[alertView textFieldAtIndex:0] text];
-    
     HighScoreModel *model = [[HighScoreModel alloc] initWithName:name withScore:tempScore];
-    
     [self.highScoreArray addObject:model];
 }
 

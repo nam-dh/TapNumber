@@ -29,6 +29,7 @@
         tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         tableView.delegate = delegate;
         tableView.dataSource = delegate;
+        
         [tableView reloadData];
         
         [self addSubview:tableView];
