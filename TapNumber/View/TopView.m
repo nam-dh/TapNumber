@@ -7,6 +7,8 @@
 //
 
 #import "TopView.h"
+#import "NotificationManager.h"
+
 
 @interface TopView()
 
@@ -30,7 +32,7 @@
         UIButton *newGameBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         [newGameBtn setTitle:@"New game" forState:UIControlStateNormal];
         newGameBtn.frame = CGRectMake(frame.size.width/3, frame.size.height *0.4, buttonWidth, buttonHeight);
-        [newGameBtn addTarget:delegate action:@selector(newGameTap) forControlEvents:UIControlEventTouchUpInside];
+        [newGameBtn addTarget:self action:@selector(newGameTap) forControlEvents:UIControlEventTouchUpInside];
         
         //UIImage *btnBackImage = [UIImage imageNamed:@"Icon_Back.png"];
         //[newGameBtn setImage:btnBackImage forState:UIControlStateNormal];
@@ -40,7 +42,10 @@
         
     }
     return self;
-    
+}
+
+- (void) newGameTap {
+    [[NotificationManager sharedInstance] postNotificationOnMainThreadName:GO_TO_GAME_VIEW object:nil userInfo:nil];
 }
 
 @end

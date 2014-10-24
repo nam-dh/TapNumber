@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "TopViewController.h"
+#import "NavigationController.h"
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) TopViewController *topViewController;
+@property (strong, nonatomic) NavigationController *navigation;
 
 @end
 
@@ -23,8 +23,10 @@
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.topViewController = [[TopViewController alloc] init];
-    self.window.rootViewController = self.topViewController;
+    
+    self.navigation = [[NavigationController alloc] init];
+    
+    [self.window addSubview:self.navigation.view];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -20,5 +20,7 @@
 -(void) dismissButtonWithID:(int)i isWinning:(BOOL)isWinning;
 -(void)updateTimer:(double) timer;
 
+- (void) resetViewWithSize:(int) size;
+
 
 @end

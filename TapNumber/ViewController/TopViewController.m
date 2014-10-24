@@ -7,12 +7,10 @@
 //
 
 #import "TopViewController.h"
-#import "GameViewController.h"
 #import "TopView.h"
 
 @interface TopViewController ()
 
-@property (strong, nonatomic) GameViewController* gameViewController;
 
 @end
 
@@ -24,9 +22,6 @@
     if (self) {
         TopView* topView = [[TopView alloc]initWithFrame:self.view.bounds delegate:self];
         self.view = topView;
-        
-        
-        self.gameViewController = [[GameViewController alloc] init];
     }
     return self;
 }
@@ -41,10 +36,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) newGameTap
-{
-    [self presentViewController:self.gameViewController animated:YES completion:nil];
-    [self.gameViewController startGame];
+- (void) newGameTap{
+    
 }
 
 @end

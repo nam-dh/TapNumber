@@ -16,6 +16,7 @@
 @property (strong, nonatomic) UIView *gameBaseView;
 @property (strong, nonatomic) UILabel *timerLabel;
 @property (strong, nonatomic) UILabel *waitingNumber;
+@property (assign, nonatomic) CGRect gameBaseFrame;
 
 @end
 
@@ -43,11 +44,11 @@
         CGFloat paddingWidth = 10;
         CGFloat paddingHeight = screenHeight * 0.3;
         
-        CGRect gameBaseFrame = CGRectMake(paddingWidth, paddingHeight, screenWidth - 2*paddingWidth, screenWidth - 2*paddingWidth);
-        self.gameBaseView = [[UIView alloc] initWithFrame:gameBaseFrame];
+        self.gameBaseFrame = CGRectMake(paddingWidth, paddingHeight, screenWidth - 2*paddingWidth, screenWidth - 2*paddingWidth);
+        self.gameBaseView = [[UIView alloc] initWithFrame:self.gameBaseFrame];
         [self addSubview:self.gameBaseView];
         
-        [self initGameMatrixViewWithSize:totalNumber inFrame:gameBaseFrame];
+        [self initGameMatrixViewWithSize:totalNumber inFrame:self.gameBaseFrame];
         
     }
     return self;
@@ -68,7 +69,7 @@
     for (int i = 0; i < size*size; i ++) {
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [btn setTitle:@"New game" forState:UIControlStateNormal];
+        [btn setTitle:@"" forState:UIControlStateNormal];
         
         CGFloat x = fmod(i, size)*(buttonSize);
         CGFloat y = (i/size) * (buttonSize);
@@ -118,11 +119,19 @@
 
 }
 
-
 -(void)updateTimer:(double) timer{
     
     NSString * timerString = [NSString stringWithFormat:@"%.2f",timer];
     [self.timerLabel setText:timerString];
+}
+
+
+- (void) resetViewWithSize:(int) size {
+    [[self.gameBaseView subviews]
+     makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self initGameMatrixViewWithSize:size inFrame:self.gameBaseFrame];
+    
+    [self.waitingNumber setText:@"1"];
 }
 
 @end

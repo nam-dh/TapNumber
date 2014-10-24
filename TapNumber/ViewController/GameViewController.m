@@ -37,6 +37,12 @@
     return self;
 }
 
+
+- (void) viewDidLoad {
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Reset" style:UIBarButtonItemStylePlain target:self action:@selector(restartGame)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+}
+
 - (void) numberTap:(UIButton*)sender{
     
     int tapNumber = (int) sender.tag;
@@ -77,6 +83,13 @@
     double timer = [self.timerModel getTimer] + 0.01;
     [self.gameView updateTimer:timer];
     [self.timerModel setTimer:timer];
+}
+
+- (void) restartGame {
+    NSLog(@"Restart Game");
+    [self.timerModel setTimer:0];
+    [self.gameView resetViewWithSize:self.size];
+    self.currentNumber = 0;
 }
 
 @end

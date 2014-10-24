@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D45AC6E19F9E8DD0064091E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC6D19F9E8DD0064091E /* NotificationManager.m */; };
+		3D45AC7119F9E9160064091E /* NSNotificationCenter+MainThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC7019F9E9160064091E /* NSNotificationCenter+MainThread.m */; };
+		3D45AC7419F9F1D30064091E /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC7319F9F1D30064091E /* MaskView.m */; };
+		3DA0A84E19F9E0B9006EA9AB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */; };
 		3DAF245719F793A700150A35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF245619F793A700150A35 /* main.m */; };
 		3DAF245A19F793A700150A35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF245919F793A700150A35 /* AppDelegate.m */; };
 		3DAF246219F793A700150A35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DAF246119F793A700150A35 /* Images.xcassets */; };
@@ -30,6 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D45AC6C19F9E8DD0064091E /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationManager.h; path = Manager/NotificationManager/NotificationManager.h; sourceTree = "<group>"; };
+		3D45AC6D19F9E8DD0064091E /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationManager.m; path = Manager/NotificationManager/NotificationManager.m; sourceTree = "<group>"; };
+		3D45AC6F19F9E9160064091E /* NSNotificationCenter+MainThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MainThread.h"; path = "Manager/NotificationManager/NSNotificationCenter+MainThread.h"; sourceTree = "<group>"; };
+		3D45AC7019F9E9160064091E /* NSNotificationCenter+MainThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+MainThread.m"; path = "Manager/NotificationManager/NSNotificationCenter+MainThread.m"; sourceTree = "<group>"; };
+		3D45AC7219F9F1D30064091E /* MaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaskView.h; path = TapNumber/View/MaskView.h; sourceTree = "<group>"; };
+		3D45AC7319F9F1D30064091E /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaskView.m; path = TapNumber/View/MaskView.m; sourceTree = "<group>"; };
+		3DA0A84C19F9E0B9006EA9AB /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = ViewController/NavigationController.h; sourceTree = "<group>"; };
+		3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = ViewController/NavigationController.m; sourceTree = "<group>"; };
 		3DAF245119F793A700150A35 /* TapNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DAF245519F793A700150A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DAF245619F793A700150A35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D45AC6B19F9E8930064091E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3D45AC6F19F9E9160064091E /* NSNotificationCenter+MainThread.h */,
+				3D45AC7019F9E9160064091E /* NSNotificationCenter+MainThread.m */,
+				3D45AC6C19F9E8DD0064091E /* NotificationManager.h */,
+				3D45AC6D19F9E8DD0064091E /* NotificationManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		3DAF244819F793A700150A35 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +114,7 @@
 		3DAF245319F793A700150A35 /* TapNumber */ = {
 			isa = PBXGroup;
 			children = (
+				3D45AC6B19F9E8930064091E /* Manager */,
 				3DAF248B19F7A4FB00150A35 /* Model */,
 				3DAF247E19F79EA800150A35 /* ViewController */,
 				3DAF247A19F7940000150A35 /* View */,
@@ -132,6 +156,8 @@
 		3DAF247A19F7940000150A35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D45AC7219F9F1D30064091E /* MaskView.h */,
+				3D45AC7319F9F1D30064091E /* MaskView.m */,
 				3DAF247B19F7945C00150A35 /* TopView.h */,
 				3DAF247C19F7945C00150A35 /* TopView.m */,
 				3DAF248519F79FB500150A35 /* GameView.h */,
@@ -148,6 +174,8 @@
 				3DAF248019F79EDD00150A35 /* TopViewController.m */,
 				3DAF248219F79F2100150A35 /* GameViewController.h */,
 				3DAF248319F79F2100150A35 /* GameViewController.m */,
+				3DA0A84C19F9E0B9006EA9AB /* NavigationController.h */,
+				3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -270,9 +298,13 @@
 			files = (
 				3DAF248719F79FB500150A35 /* GameView.m in Sources */,
 				3DAF248419F79F2100150A35 /* GameViewController.m in Sources */,
+				3D45AC7419F9F1D30064091E /* MaskView.m in Sources */,
 				3DAF248119F79EDD00150A35 /* TopViewController.m in Sources */,
 				3DAF245A19F793A700150A35 /* AppDelegate.m in Sources */,
 				3DAF247D19F7945C00150A35 /* TopView.m in Sources */,
+				3DA0A84E19F9E0B9006EA9AB /* NavigationController.m in Sources */,
+				3D45AC6E19F9E8DD0064091E /* NotificationManager.m in Sources */,
+				3D45AC7119F9E9160064091E /* NSNotificationCenter+MainThread.m in Sources */,
 				3DAF245719F793A700150A35 /* main.m in Sources */,
 				3DD72D3819F8FE9E002B7BDE /* TimerModel.m in Sources */,
 			);
