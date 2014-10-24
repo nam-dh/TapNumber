@@ -7,6 +7,7 @@
 //
 
 #import "GameView.h"
+#import "MaskView.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) UILabel *timerLabel;
 @property (strong, nonatomic) UILabel *waitingNumber;
 @property (assign, nonatomic) CGRect gameBaseFrame;
+@property (strong, nonatomic) MaskView *maskView;
 
 @end
 
@@ -27,7 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         NSLog(@"gameview");
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         CGRect screenRect = [[UIScreen mainScreen] bounds];
         CGFloat screenWidth = screenRect.size.width;
@@ -50,6 +52,8 @@
         
         [self initGameMatrixViewWithSize:totalNumber inFrame:self.gameBaseFrame];
         
+        
+        self.maskView = [[MaskView alloc] initWithFrame:frame delegate:nil withAlpha:0.8];
     }
     return self;
 }
@@ -132,6 +136,15 @@
     [self initGameMatrixViewWithSize:size inFrame:self.gameBaseFrame];
     
     [self.waitingNumber setText:@"1"];
+}
+
+- (void) addMaskViewAndCoutingDown {
+    
+    [self addSubview:self.maskView];
+    self.maskView.alpha = 1;
+    [self bringSubviewToFront:self.maskView];
+    [self.maskView restartNumber];
+    [self.maskView startAnimation];
 }
 
 @end

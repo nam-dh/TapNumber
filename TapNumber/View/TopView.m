@@ -30,15 +30,28 @@
         CGFloat buttonHeight = frame.size.height /5;
         
         UIButton *newGameBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [newGameBtn setTitle:@"New game" forState:UIControlStateNormal];
+        [newGameBtn setTitle:@"NEW GAME" forState:UIControlStateNormal];
         newGameBtn.frame = CGRectMake(frame.size.width/3, frame.size.height *0.4, buttonWidth, buttonHeight);
         [newGameBtn addTarget:self action:@selector(newGameTap) forControlEvents:UIControlEventTouchUpInside];
         
         //UIImage *btnBackImage = [UIImage imageNamed:@"Icon_Back.png"];
         //[newGameBtn setImage:btnBackImage forState:UIControlStateNormal];
         newGameBtn.autoresizingMask=(UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin);
-        //newGameBtn.hidden = YES;
+        
+        
+        UIButton *highScoreBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [highScoreBtn setTitle:@"HIGH SCORE" forState:UIControlStateNormal];
+        highScoreBtn.frame = CGRectMake(frame.size.width/3, frame.size.height *0.4 + buttonHeight, buttonWidth, buttonHeight);
+        [highScoreBtn addTarget:self action:@selector(highScoreTap) forControlEvents:UIControlEventTouchUpInside];
+        
+        //UIImage *btnBackImage = [UIImage imageNamed:@"Icon_Back.png"];
+        //[newGameBtn setImage:btnBackImage forState:UIControlStateNormal];
+        highScoreBtn.autoresizingMask=(UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin);
+
+        
+        
         [self addSubview:newGameBtn];
+        [self addSubview:highScoreBtn];
         
     }
     return self;
@@ -46,6 +59,10 @@
 
 - (void) newGameTap {
     [[NotificationManager sharedInstance] postNotificationOnMainThreadName:GO_TO_GAME_VIEW object:nil userInfo:nil];
+}
+
+- (void) highScoreTap {
+    [[NotificationManager sharedInstance] postNotificationOnMainThreadName:GO_TO_HIGHSCORE_VIEW object:nil userInfo:nil];
 }
 
 @end

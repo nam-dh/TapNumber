@@ -57,6 +57,8 @@ static NotificationManager *_sharedInstance = nil;
         _notificationNames = [[NSArray alloc] initWithObjects:
                               
                               @"gotoGameView",
+                              @"gotoHighScoreView",
+                              @"startGameTiming",
                               
                               nil];
         return self;

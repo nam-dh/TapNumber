@@ -9,6 +9,9 @@
 #import "GameViewController.h"
 #import "GameView.h"
 #import "TimerModel.h"
+#import "MaskView.h"
+
+#import "NotificationManager.h"
 
 @interface GameViewController()
 @property (assign, nonatomic) int size;
@@ -16,7 +19,7 @@
 @property (strong, nonatomic) GameView* gameView;
 @property (strong, nonatomic) NSTimer* timer;
 @property (strong, nonatomic) TimerModel* timerModel;
-
+@property (strong, nonatomic) MaskView* maskView;
 
 @end
 
@@ -28,19 +31,31 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.size = 5;
+        self.size = 1;
         self.currentNumber = 0;
         self.gameView = [[GameView alloc]initWithFrame:self.view.bounds delegate:self totalNumber:self.size];
         self.view = self.gameView;
         self.timerModel = [[TimerModel alloc] init];
+        
+        [[NotificationManager sharedInstance] addObserver:self selector:@selector(startTiming) name:START_GAME_TIMING object:nil];
+    
     }
     return self;
 }
 
-
 - (void) viewDidLoad {
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Reset" style:UIBarButtonItemStylePlain target:self action:@selector(restartGame)];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Reset" style:UIBarButtonItemStylePlain target:self action:@selector(startGame)];
     self.navigationItem.rightBarButtonItem = anotherButton;
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+   
+    [self.timer invalidate];
+    self.timer = nil;
+    
+    [self.timerModel setTimer:0];
+    [self.gameView updateTimer:0];
+    
 }
 
 - (void) numberTap:(UIButton*)sender{
@@ -62,20 +77,39 @@
     }
 }
 
-- (void) startGame {
+- (void) startCountingDown {
+    [self.gameView addMaskViewAndCoutingDown];
+}
+
+- (void) startTiming {
+    
+    NSLog(@"Start TIMING");
     //NSDictionary *userInfo = [NSDictionary dictionaryWithObject:label.textColor  forKey:@"color"];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)(0.01)
                                      target:self
                                    selector:@selector(updateTimer:)
                                    userInfo:nil
                                     repeats:TRUE];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void) winGame {
-    [self.timer invalidate];
+    if (self.timer.isValid) {
+        [self.timer invalidate];
+    }
     
     double endTime = [self.timerModel getTimer];
     NSLog(@"End Time = %.2f", endTime);
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"High Score" message:[NSString stringWithFormat:@"Your highscore: %fs.\nInput your name:",endTime]
+                                                    delegate:self cancelButtonTitle:nil otherButtonTitles:@"Submit", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
 }
 
 -(void)updateTimer:(NSTimer*) theTimer{
@@ -85,11 +119,24 @@
     [self.timerModel setTimer:timer];
 }
 
-- (void) restartGame {
-    NSLog(@"Restart Game");
+- (void) startGame {
+    NSLog(@"Start Game");
+    
+    [self.timer invalidate];
+    self.timer = nil;
+    
     [self.timerModel setTimer:0];
+    [self.gameView updateTimer:0];
+    
     [self.gameView resetViewWithSize:self.size];
     self.currentNumber = 0;
+    
+    [self startCountingDown];
+    /*
+    if (!self.timer.isValid) {
+        [self startTiming];
+    }
+     */
 }
 
 @end

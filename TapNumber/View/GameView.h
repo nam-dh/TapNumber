@@ -21,6 +21,7 @@
 -(void)updateTimer:(double) timer;
 
 - (void) resetViewWithSize:(int) size;
+- (void) addMaskViewAndCoutingDown;
 
 
 @end

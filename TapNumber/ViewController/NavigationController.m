@@ -9,6 +9,7 @@
 #import "NavigationController.h"
 #import "GameViewController.h"
 #import "TopViewController.h"
+#import "HighScoreViewController.h"
 
 #import "NotificationManager.h"
 
@@ -16,6 +17,8 @@
 
 @property (retain, nonatomic) GameViewController *gameViewController;
 @property (retain, nonatomic) TopViewController *homeViewController;
+@property (retain, nonatomic) HighScoreViewController *highScoreViewController;
+
 
 @end
 
@@ -28,10 +31,12 @@
     
         self.homeViewController = [[TopViewController alloc] init];
         self.gameViewController = [[GameViewController alloc] init];
+        self.highScoreViewController = [[HighScoreViewController alloc] init];
         
         [self pushViewController:self.homeViewController animated:NO];
         
         [[NotificationManager sharedInstance] addObserver:self selector:@selector(newGameTap:) name:GO_TO_GAME_VIEW object:nil];
+        [[NotificationManager sharedInstance] addObserver:self selector:@selector(highScoreTap:) name:GO_TO_HIGHSCORE_VIEW object:nil];
     }
     
     return self;
@@ -45,6 +50,10 @@
 {
     [self pushViewController:self.gameViewController animated:YES];
     [self.gameViewController startGame];
+}
+- (void) highScoreTap:(NSNotification *)notification
+{
+    [self pushViewController:self.highScoreViewController animated:YES];
 }
 
 

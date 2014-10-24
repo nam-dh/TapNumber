@@ -11,6 +11,8 @@
 typedef enum NotificationName : NSUInteger
 {
     GO_TO_GAME_VIEW,
+    GO_TO_HIGHSCORE_VIEW,
+    START_GAME_TIMING,
 
 }
 NotificationName;

@@ -10,6 +10,10 @@
 		3D45AC6E19F9E8DD0064091E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC6D19F9E8DD0064091E /* NotificationManager.m */; };
 		3D45AC7119F9E9160064091E /* NSNotificationCenter+MainThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC7019F9E9160064091E /* NSNotificationCenter+MainThread.m */; };
 		3D45AC7419F9F1D30064091E /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC7319F9F1D30064091E /* MaskView.m */; };
+		3D45AC7719FA2B480064091E /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC7619FA2B480064091E /* HighScoreViewController.m */; };
+		3D45AC7A19FA2BF00064091E /* HighScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC7919FA2BF00064091E /* HighScoreView.m */; };
+		3D45AC8219FA2CD60064091E /* StorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC8019FA2CD60064091E /* StorageManager.m */; };
+		3D45AC8519FA2EE30064091E /* HighScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC8419FA2EE30064091E /* HighScoreModel.m */; };
 		3DA0A84E19F9E0B9006EA9AB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */; };
 		3DAF245719F793A700150A35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF245619F793A700150A35 /* main.m */; };
 		3DAF245A19F793A700150A35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF245919F793A700150A35 /* AppDelegate.m */; };
@@ -40,6 +44,14 @@
 		3D45AC7019F9E9160064091E /* NSNotificationCenter+MainThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+MainThread.m"; path = "Manager/NotificationManager/NSNotificationCenter+MainThread.m"; sourceTree = "<group>"; };
 		3D45AC7219F9F1D30064091E /* MaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaskView.h; path = TapNumber/View/MaskView.h; sourceTree = "<group>"; };
 		3D45AC7319F9F1D30064091E /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaskView.m; path = TapNumber/View/MaskView.m; sourceTree = "<group>"; };
+		3D45AC7519FA2B480064091E /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreViewController.h; path = ViewController/HighScoreViewController.h; sourceTree = "<group>"; };
+		3D45AC7619FA2B480064091E /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreViewController.m; path = ViewController/HighScoreViewController.m; sourceTree = "<group>"; };
+		3D45AC7819FA2BF00064091E /* HighScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreView.h; path = TapNumber/View/HighScoreView.h; sourceTree = "<group>"; };
+		3D45AC7919FA2BF00064091E /* HighScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreView.m; path = TapNumber/View/HighScoreView.m; sourceTree = "<group>"; };
+		3D45AC7F19FA2CD60064091E /* StorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StorageManager.h; path = Manager/StorageManager/StorageManager.h; sourceTree = "<group>"; };
+		3D45AC8019FA2CD60064091E /* StorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StorageManager.m; path = Manager/StorageManager/StorageManager.m; sourceTree = "<group>"; };
+		3D45AC8319FA2EE30064091E /* HighScoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreModel.h; path = Model/HighScoreModel.h; sourceTree = "<group>"; };
+		3D45AC8419FA2EE30064091E /* HighScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreModel.m; path = Model/HighScoreModel.m; sourceTree = "<group>"; };
 		3DA0A84C19F9E0B9006EA9AB /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = ViewController/NavigationController.h; sourceTree = "<group>"; };
 		3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = ViewController/NavigationController.m; sourceTree = "<group>"; };
 		3DAF245119F793A700150A35 /* TapNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,12 +97,30 @@
 		3D45AC6B19F9E8930064091E /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				3D45AC7C19FA2CBE0064091E /* StorageManager */,
+				3D45AC7B19FA2C750064091E /* NotificationManager */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		3D45AC7B19FA2C750064091E /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
 				3D45AC6F19F9E9160064091E /* NSNotificationCenter+MainThread.h */,
 				3D45AC7019F9E9160064091E /* NSNotificationCenter+MainThread.m */,
 				3D45AC6C19F9E8DD0064091E /* NotificationManager.h */,
 				3D45AC6D19F9E8DD0064091E /* NotificationManager.m */,
 			);
-			name = Manager;
+			name = NotificationManager;
+			sourceTree = "<group>";
+		};
+		3D45AC7C19FA2CBE0064091E /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				3D45AC7F19FA2CD60064091E /* StorageManager.h */,
+				3D45AC8019FA2CD60064091E /* StorageManager.m */,
+			);
+			name = StorageManager;
 			sourceTree = "<group>";
 		};
 		3DAF244819F793A700150A35 = {
@@ -162,6 +192,8 @@
 				3DAF247C19F7945C00150A35 /* TopView.m */,
 				3DAF248519F79FB500150A35 /* GameView.h */,
 				3DAF248619F79FB500150A35 /* GameView.m */,
+				3D45AC7819FA2BF00064091E /* HighScoreView.h */,
+				3D45AC7919FA2BF00064091E /* HighScoreView.m */,
 			);
 			name = View;
 			path = ..;
@@ -174,6 +206,8 @@
 				3DAF248019F79EDD00150A35 /* TopViewController.m */,
 				3DAF248219F79F2100150A35 /* GameViewController.h */,
 				3DAF248319F79F2100150A35 /* GameViewController.m */,
+				3D45AC7519FA2B480064091E /* HighScoreViewController.h */,
+				3D45AC7619FA2B480064091E /* HighScoreViewController.m */,
 				3DA0A84C19F9E0B9006EA9AB /* NavigationController.h */,
 				3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */,
 			);
@@ -193,6 +227,8 @@
 			children = (
 				3DD72D3619F8FE9E002B7BDE /* TimerModel.h */,
 				3DD72D3719F8FE9E002B7BDE /* TimerModel.m */,
+				3D45AC8319FA2EE30064091E /* HighScoreModel.h */,
+				3D45AC8419FA2EE30064091E /* HighScoreModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -297,16 +333,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAF248719F79FB500150A35 /* GameView.m in Sources */,
+				3D45AC8519FA2EE30064091E /* HighScoreModel.m in Sources */,
 				3DAF248419F79F2100150A35 /* GameViewController.m in Sources */,
 				3D45AC7419F9F1D30064091E /* MaskView.m in Sources */,
 				3DAF248119F79EDD00150A35 /* TopViewController.m in Sources */,
 				3DAF245A19F793A700150A35 /* AppDelegate.m in Sources */,
+				3D45AC7A19FA2BF00064091E /* HighScoreView.m in Sources */,
 				3DAF247D19F7945C00150A35 /* TopView.m in Sources */,
 				3DA0A84E19F9E0B9006EA9AB /* NavigationController.m in Sources */,
 				3D45AC6E19F9E8DD0064091E /* NotificationManager.m in Sources */,
 				3D45AC7119F9E9160064091E /* NSNotificationCenter+MainThread.m in Sources */,
 				3DAF245719F793A700150A35 /* main.m in Sources */,
+				3D45AC8219FA2CD60064091E /* StorageManager.m in Sources */,
 				3DD72D3819F8FE9E002B7BDE /* TimerModel.m in Sources */,
+				3D45AC7719FA2B480064091E /* HighScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -399,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -412,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TapNumber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TapNumber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
