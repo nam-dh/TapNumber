@@ -17,23 +17,15 @@
 
 @implementation HighScoreModel
 
-- (id) initWithDictionary:(NSDictionary*)dictionary
+- (id) initWithName:(NSString*) name withScore:(double) score
 {
     
     self = [super init];
     if (self) {
-        
-        if (dictionary) {
-            self.name = [dictionary objectForKey:@"Name"];
-            self.highScoreTime = [[dictionary objectForKey:@"Score"] doubleValue];
-        }
+        self.name = name;
+        self.highScoreTime = score;
     }
     return self;
-}
-
-- (NSDictionary*) getDictonaryFromModel
-{
-    return [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:self.name, self.highScoreTime, nil] forKeys:[NSArray arrayWithObjects:@"Name", @"Score", nil]];
 }
 
 - (NSString*) getName

@@ -101,15 +101,8 @@
     double endTime = [self.timerModel getTimer];
     NSLog(@"End Time = %.2f", endTime);
     
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"High Score" message:[NSString stringWithFormat:@"Your highscore: %fs.\nInput your name:",endTime]
-                                                    delegate:self cancelButtonTitle:nil otherButtonTitles:@"Submit", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+    [[NotificationManager sharedInstance] postNotificationOnMainThreadName:WIN_WITH_SCORE object:[NSNumber numberWithDouble:endTime] userInfo:nil];
     
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
 }
 
 -(void)updateTimer:(NSTimer*) theTimer{

@@ -78,6 +78,7 @@ static StorageManager *_sharedInstance = nil;
 
 - (void)setObject:(id)value forKey:(StorageKey)key
 {
+
     [[NSUserDefaults standardUserDefaults]
      setObject:value forKey:_storageKeys[key]];
 }

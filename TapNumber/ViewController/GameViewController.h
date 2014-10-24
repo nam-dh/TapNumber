@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GameView.h"
 
-@interface GameViewController : UIViewController <GameViewDelegate, UIAlertViewDelegate>
+@interface GameViewController : UIViewController <GameViewDelegate>
 
 - (void) startCountingDown;
 - (void) startGame;

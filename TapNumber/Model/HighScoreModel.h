@@ -10,8 +10,7 @@
 
 @interface HighScoreModel : NSObject
 
-- (id) initWithDictionary:(NSDictionary*)dictionary;
-- (NSDictionary*) getDictonaryFromModel;
+- (id) initWithName:(NSString*) name withScore:(double) score;
 - (NSString*) getName;
 - (double) getHighScore;
 

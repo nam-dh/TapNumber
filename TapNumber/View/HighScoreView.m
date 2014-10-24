@@ -16,7 +16,22 @@
     if (self) {
         // Initialization code
         
-        [self setBackgroundColor:[UIColor blueColor]];
+        CGRect labelFrame = CGRectMake(0, 150, frame.size.width, 20);
+        UILabel *highScoreLabel = [[UILabel alloc] initWithFrame:labelFrame];
+        [highScoreLabel setTextAlignment:NSTextAlignmentCenter];
+        [highScoreLabel setText:@"HIGH SCORE"];
+        
+        [self addSubview:highScoreLabel];
+        
+        
+        CGRect tableFrame = CGRectMake(20, 170, frame.size.width - 40, frame.size.height - 170);
+        UITableView *tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
+        tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        tableView.delegate = delegate;
+        tableView.dataSource = delegate;
+        [tableView reloadData];
+        
+        [self addSubview:tableView];
         
     }
     return self;

@@ -59,7 +59,7 @@ static NotificationManager *_sharedInstance = nil;
                               @"gotoGameView",
                               @"gotoHighScoreView",
                               @"startGameTiming",
-                              
+                              @"winWithScore",
                               nil];
         return self;
     }

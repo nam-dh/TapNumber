@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HighScoreViewController : UIViewController
+@interface HighScoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @end

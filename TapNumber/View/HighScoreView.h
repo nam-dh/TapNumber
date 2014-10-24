@@ -10,4 +10,6 @@
 
 @interface HighScoreView : UIView
 
+- (id)initWithFrame:(CGRect)frame delegate:(id) delegate;
+
 @end
