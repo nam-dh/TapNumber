@@ -24,7 +24,9 @@
     if (self) {
         NSLog(@"topview");
         self.delegate = delegate;
-        self.backgroundColor = [UIColor whiteColor];
+        //self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper.jpg"]];
+        
         
         CGFloat buttonWidth = frame.size.width /3;
         CGFloat buttonHeight = frame.size.height /5;

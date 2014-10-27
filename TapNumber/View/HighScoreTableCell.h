@@ -11,6 +11,6 @@
 @interface HighScoreTableCell : UITableViewCell
 
 
-- (void) setName:(NSString*) name andScore:(double) score;
+- (void) setName:(NSString*) name andScore:(double) score andRanking:(short) ranking;
 
 @end

@@ -15,4 +15,6 @@
 -(void) removeObject:(HighScoreModel*)anObject;
 - (NSArray*) getList;
 
+-(BOOL) checkIsHighScore:(double) score;
+
 @end

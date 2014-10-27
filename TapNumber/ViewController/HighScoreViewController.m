@@ -76,7 +76,7 @@ double tempScore;
         NSLog(@"Name = %@", [model getName]);
         NSLog(@"Score = %.2f", [model getHighScore]);
     
-        [cell setName:[model getName] andScore:[model getHighScore]];
+        [cell setName:[model getName] andScore:[model getHighScore] andRanking:indexPath.row+1];
     }
     
     return cell;
@@ -88,16 +88,20 @@ double tempScore;
     NSNumber *score = notification.object;
     tempScore = score.doubleValue;
     
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"High Score" message:[NSString stringWithFormat:@"Your highscore: %fs.\nInput your name:",tempScore]
-                                                    delegate:self cancelButtonTitle:nil otherButtonTitles:@"Submit", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+    if ([self.highScoreArray checkIsHighScore:tempScore]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"High Score" message:[NSString stringWithFormat:@"Your highscore: %.2fs.\nInput your name:",tempScore]
+                                                        delegate:self cancelButtonTitle:nil otherButtonTitles:@"Submit", nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert show];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString *name = [[alertView textFieldAtIndex:0] text];
     HighScoreModel *model = [[HighScoreModel alloc] initWithName:name withScore:tempScore];
     [self.highScoreArray addObject:model];
+    
+    [self.highScoreView reloadData];
 }
 
 @end

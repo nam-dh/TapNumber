@@ -53,7 +53,7 @@
         [self initGameMatrixViewWithSize:totalNumber inFrame:self.gameBaseFrame];
         
         
-        self.maskView = [[MaskView alloc] initWithFrame:frame delegate:nil withAlpha:0.8];
+        self.maskView = [[MaskView alloc] initWithFrame:frame delegate:nil withAlpha:0.85];
     }
     return self;
 }
@@ -140,9 +140,12 @@
 
 - (void) addMaskViewAndCoutingDown {
     
-    [self addSubview:self.maskView];
+    UIWindow* currentWindow = [UIApplication sharedApplication].keyWindow;
+    [currentWindow addSubview:self.maskView];
+    
+    //[self addSubview:self.maskView];
     self.maskView.alpha = 1;
-    [self bringSubviewToFront:self.maskView];
+    //[self bringSubviewToFront:self.maskView];
     [self.maskView restartNumber];
     [self.maskView startAnimation];
 }

@@ -16,6 +16,7 @@
 		3D45AC8519FA2EE30064091E /* HighScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC8419FA2EE30064091E /* HighScoreModel.m */; };
 		3D45AC8819FA45E90064091E /* HighScoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC8719FA45E90064091E /* HighScoreList.m */; };
 		3D45AC8C19FA522A0064091E /* HighScoreTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AC8B19FA522A0064091E /* HighScoreTableCell.m */; };
+		3D98B32C19FE198D008A2D11 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D98B32B19FE198D008A2D11 /* wallpaper.jpg */; };
 		3DA0A84E19F9E0B9006EA9AB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */; };
 		3DAF245719F793A700150A35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF245619F793A700150A35 /* main.m */; };
 		3DAF245A19F793A700150A35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF245919F793A700150A35 /* AppDelegate.m */; };
@@ -58,6 +59,7 @@
 		3D45AC8719FA45E90064091E /* HighScoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreList.m; path = Model/HighScoreList.m; sourceTree = "<group>"; };
 		3D45AC8A19FA522A0064091E /* HighScoreTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreTableCell.h; path = TapNumber/View/HighScoreTableCell.h; sourceTree = "<group>"; };
 		3D45AC8B19FA522A0064091E /* HighScoreTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreTableCell.m; path = TapNumber/View/HighScoreTableCell.m; sourceTree = "<group>"; };
+		3D98B32B19FE198D008A2D11 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpaper.jpg; path = Images/wallpaper.jpg; sourceTree = "<group>"; };
 		3DA0A84C19F9E0B9006EA9AB /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = ViewController/NavigationController.h; sourceTree = "<group>"; };
 		3DA0A84D19F9E0B9006EA9AB /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = ViewController/NavigationController.m; sourceTree = "<group>"; };
 		3DAF245119F793A700150A35 /* TapNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +235,7 @@
 		3DAF248819F7A16200150A35 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3D98B32B19FE198D008A2D11 /* wallpaper.jpg */,
 				3DAF248E19F7AE4400150A35 /* ruby.png */,
 			);
 			name = Images;
@@ -331,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D98B32C19FE198D008A2D11 /* wallpaper.jpg in Resources */,
 				3DAF246219F793A700150A35 /* Images.xcassets in Resources */,
 				3DAF248F19F7AE4400150A35 /* ruby.png in Resources */,
 			);

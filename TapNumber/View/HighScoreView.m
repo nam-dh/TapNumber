@@ -8,6 +8,12 @@
 
 #import "HighScoreView.h"
 
+@interface HighScoreView()
+
+@property (nonatomic, strong) UITableView* tableView;
+
+@end
+
 @implementation HighScoreView
 
 - (id)initWithFrame:(CGRect)frame delegate:(id) delegate
@@ -16,7 +22,7 @@
     if (self) {
         // Initialization code
         
-        CGRect labelFrame = CGRectMake(0, 150, frame.size.width, 20);
+        CGRect labelFrame = CGRectMake(0, 100, frame.size.width, 40);
         UILabel *highScoreLabel = [[UILabel alloc] initWithFrame:labelFrame];
         [highScoreLabel setTextAlignment:NSTextAlignmentCenter];
         [highScoreLabel setText:@"HIGH SCORE"];
@@ -24,18 +30,27 @@
         [self addSubview:highScoreLabel];
         
         
-        CGRect tableFrame = CGRectMake(20, 170, frame.size.width - 40, frame.size.height - 170);
-        UITableView *tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
-        tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-        tableView.delegate = delegate;
-        tableView.dataSource = delegate;
+        CGRect tableFrame = CGRectMake(20, 170, frame.size.width - 40, frame.size.height - 210);
+        self.tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
+        self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        self.tableView.delegate = delegate;
+        self.tableView.dataSource = delegate;
+        self.tableView.scrollEnabled = NO;
+        self.tableView.userInteractionEnabled = NO;
+        self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        self.tableView.rowHeight = 30;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self.tableView reloadData];
         
-        [tableView reloadData];
-        
-        [self addSubview:tableView];
+        [self addSubview:self.tableView];
         
     }
     return self;
+}
+
+- (void) reloadData
+{
+    [self.tableView reloadData];
 }
 
 @end

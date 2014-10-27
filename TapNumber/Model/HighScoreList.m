@@ -32,6 +32,10 @@
 -(void) addObject:(HighScoreModel*)anObject
 {
     [self.list addObject:anObject];
+    self.list = [self bubbleSort:self.list];
+    if (self.list.count > 10) {
+        [self.list removeObjectAtIndex:self.list.count -1];
+    }
     [[StorageManager sharedInstance] setObject:[self dictListFromModelList:self.list] forKey:HIGH_SCORE_LIST];
 }
 
@@ -39,6 +43,7 @@
 -(void) removeObject:(HighScoreModel*)anObject
 {
     [self.list removeObject:anObject];
+    self.list = [self bubbleSort:self.list];
     [[StorageManager sharedInstance] setObject:[self dictListFromModelList:self.list] forKey:HIGH_SCORE_LIST];
 }
 
@@ -83,5 +88,34 @@
     return result;
 }
 
+-(NSMutableArray *)bubbleSort:(NSMutableArray *)unsortedDataArray
+{
+    long count = unsortedDataArray.count;
+    int i;
+    bool swapped = TRUE;
+    while (swapped){
+        swapped = FALSE;
+        for (i=1; i<count;i++)
+        {
+            if ([(HighScoreModel*)[unsortedDataArray objectAtIndex:(i-1)] getHighScore]> [(HighScoreModel*)[unsortedDataArray objectAtIndex:i] getHighScore])
+            {
+                [unsortedDataArray exchangeObjectAtIndex:(i-1) withObjectAtIndex:i];
+                swapped = TRUE;
+            }
+            //bubbleSortCount ++; //Increment the count everytime a switch is done, this line is not required in the production implementation.
+        }
+    }
+    return unsortedDataArray;
+}
 
+- (BOOL) checkIsHighScore:(double) score
+{
+    short count = self.list.count;
+    if (count < 10) {
+        return YES;
+    } else {
+        double lowestScore = [(HighScoreModel*)[self.list objectAtIndex:count -1] getHighScore];
+        return (score < lowestScore);
+    }
+}
 @end
