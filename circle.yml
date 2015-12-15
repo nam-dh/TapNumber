@@ -1,3 +1,5 @@
 machine:
- xcode:
-  version: "7.1"
+	timezone:
+        Asia/Tokyo
+	xcode:
+		version: "7.1"
